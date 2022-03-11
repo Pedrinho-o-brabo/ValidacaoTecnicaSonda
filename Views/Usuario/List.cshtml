@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ValidacaoTec.Models.Usuario>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table table-bordered  table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+               Nome do usuário
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <th>
+                    <a asp-controller="Usuario" asp-action="Details" asp-route-id="@obj.UsuarioId">@obj.UsuarioNome</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
